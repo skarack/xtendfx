@@ -14,10 +14,9 @@ import javafx.scene.text.Text
 import javafx.stage.Stage
 import xtendfx.FXApp
 
-import static extension xtendfx.scene.SceneBuilder.*
-
 import static extension xtendfx.beans.binding.BindingExtensions.*
 import static extension xtendfx.beans.binding.StringExpressionExtensions.*
+import static extension xtendfx.scene.SceneBuilder.*
 
 @FXApp class LoginScreenXtend {
 

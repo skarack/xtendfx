@@ -3,7 +3,6 @@ package multitouch
 import xtendfx.FXApp
 import javafx.stage.Stage
 import static extension xtendfx.scene.SceneBuilder.*
-import static extension xtendfx.control.ControlBuilder.*
 import xtendfx.scene.MultiTouchSceneBehavior
 
 @FXApp class MultiTouchDemo {

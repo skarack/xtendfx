@@ -3,10 +3,7 @@ package metronome
 import javafx.animation.Interpolator
 import javafx.animation.Timeline
 import javafx.animation.TranslateTransition
-import javafx.scene.Group
-import javafx.scene.Scene
 import javafx.scene.control.Button
-import javafx.scene.layout.HBox
 import javafx.scene.shape.Circle
 import javafx.stage.Stage
 import javafx.util.Duration
@@ -16,6 +13,7 @@ import static javafx.animation.Animation.Status.*
 import static javafx.scene.paint.Color.*
 
 import static extension xtendfx.beans.binding.BindingExtensions.*
+import static extension xtendfx.scene.SceneBuilder.*
 
 @FXApp class MetronomeTransitionXtend {
 
@@ -45,33 +43,30 @@ import static extension xtendfx.beans.binding.BindingExtensions.*
 		title = "Metronome with Xtend"
 		width = 400
 		height = 500
-		scene = new Scene(new Group => [
+		Scene[
 			children += circle
-			children += new HBox => [
+			HBox[
 				layoutX = 60
 				layoutY = 420
-				children += startButton = new Button("Start") => [
-					onAction = [
-						anim.playFromStart
-					]
+				spacing = 10
+				startButton = Button[
+					text = "Start"
+					onAction = [ anim.playFromStart ]
 				]
-				children += pauseButton = new Button("Pause") => [
-					onAction = [
-						anim.pause
-					]
+				pauseButton = Button[
+					text = "Pause"
+					onAction = [ anim.pause ]
 				]
-				children += resumeButton = new Button("Resume") => [
-					onAction = [
-						anim.play
-					]
+				resumeButton = Button[
+					text = "Resume"
+					onAction = [ anim.play ]
 				]
-				children += stopButton = new Button("Stop") => [
-					onAction = [
-						anim.stop
-					]
+				stopButton = Button[
+					text = "Stop"
+					onAction = [ anim.stop ]
 				]
 			]
-		])
+		]
 			
 		startButton.disableProperty  -> (anim.statusProperty != STOPPED)
 		pauseButton.disableProperty  -> (anim.statusProperty != RUNNING)

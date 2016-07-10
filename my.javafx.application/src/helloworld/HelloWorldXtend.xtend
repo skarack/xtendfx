@@ -4,7 +4,6 @@ import xtendfx.FXApp
 import javafx.stage.Stage
 
 import static extension xtendfx.scene.SceneBuilder.*
-import static extension xtendfx.control.ControlBuilder.*
 
 @FXApp class HelloWorldXtend {
 	
